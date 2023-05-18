@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="/Guvi_Task/Day_12/bootstrap.css" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    }
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+    </style>
+    <title>Task_2_Survey_Form</title>
+</head>
+<body>
+<div class="container">
+<form action="./success.html" class="form-group">
+    <div class="form-control">
+        <label class="form-label fw-bold">Name<span style="color: red;">*</span></label>
+        <div class="row mb-3">
+            <div class="col-5">
+                <!-- <i class="bi bi-person-badge"></i> -->
+                <input type="text" id="first" class="form-control" required>
+            <label for="first" class="form-label">First</label>
+            </div>
+            <div class="col-5">
+            <input type="text" id="last" class="form-control" required>
+            <label for="last" class="form-label">Last</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email<span style="color: red;">*</span></label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+
+        <div class="rate mb-3">
+            <p class="fw-bold form-label">Your Experience<span style="color: red;">*</span></p>
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" required />
+            <label for="star1" title="text">1 star</label>
+          </div>
+          <br><br><br><br>
+        <div class="mb-3 form-label">
+            <p>Overall, how would you rate your experience with us?</p>
+            <p class="fw-bold">How Satisfied are you with<span style="color: red;">*</span></p>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table text-center ">
+                    <tr>
+                        <td scope="col"></td>
+                        <td scope="col">Very Unsatisfied</td>    
+                        <td scope="col">Unsatisfied</td>    
+                        <td scope="col">Neutral</td>    
+                        <td scope="col">Satisfied</td>    
+                        <td scope="col">Very Satisfied</td>
+                    </tr>
+                </thead>
+                <tbody class="table-stripped text-center" required>
+                    <tr> 
+                        <td scope="row">Purchase</td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>                     
+                    </tr>
+                    <tr>
+                        <td scope="row">Service</td>
+                        <td scope="col"><input type="radio" /></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>                          
+                    </tr>
+                    <tr>
+                        <td scope="row">Company Overall</td>
+                        <td scope="col"><input type="radio" /></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>  
+                    </tr>
+                </tbody>
+            </table>
+           </div>
+        </div>
+
+        <div class="mb-3 form-label">
+            <p class="fw-bold">How likely are you to<span style="color: red;">*</span></p>
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table text-center">
+                    <tr>
+                        <td scope="col"></td>
+                        <td scope="col">Very UnLikely</td>
+                        <td scope="col">UnLikely</td>
+                        <td scope="col">Neutral</td>
+                        <td scope="col">Likely</td>
+                        <td scope="col">Very Likely</td>
+                    </tr>
+                </thead>
+                <tbody class="table-stripped text-center" required>  
+                    <tr> 
+                        <td scope="row">Buy from us again</td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>                    
+                    </tr>
+                    <tr>
+                        <td scope="row">Recommend our products to others</td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>                          
+                    </tr>
+                    <tr>
+                        <td scope="row">Recommend our company to others</td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>
+                        <td scope="col"><input type="radio"/></td>   
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        
+          <div class="mb-3">
+            <label for="Textarea1" class="form-label fw-bold">Additional Comments or suggestions</label>
+            <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+          </div>
+          <input type="Submit">
+  </div>
+</form>
+</div>
+</body>
+</html>
