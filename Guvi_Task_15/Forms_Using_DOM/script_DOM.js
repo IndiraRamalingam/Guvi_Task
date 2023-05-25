@@ -230,10 +230,11 @@ var divtable = document.createElement('div')
 divtable.setAttribute('class', 'row');
 
 var table = document.createElement('table');
-table.setAttribute('class', 'table mt-5');
+table.setAttribute('class', 'table table-striped table-hover mt-5');
 table.id="table"
 
 var thead = document.createElement('thead');
+//thead.setAttribute('class','table-primary')
 var tbody = document.createElement('tbody');
 
 var tr1 = document.createElement('tr');
@@ -272,13 +273,29 @@ function submitData(){
                 //console.log(table_gender[i].value);
                 gen.push(table_gender[i].value)
         }
-        console.log(gen);
-    let table_food= document.querySelectorAll('input[name="food_name"]:checked');
+       // console.log(gen);
+    //Condition to select only two checkbox
+        var checkBoxGroup = document.forms['form']['food_name'];			
+        var limit = 2;
+        for (var i = 0; i < checkBoxGroup.length; i++) {
+            checkBoxGroup[i].onclick = function() {
+                var checkedcount = 0;
+                for (var i = 0; i < checkBoxGroup.length; i++) {
+                    checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+                }
+                if (checkedcount > limit) {
+                    //console.log("You can select maximum of " + limit + " checkboxes.");
+                    alert("You can select maximum of " + limit + " checkboxes.");						
+                    this.checked = false;
+                }
+            }
+        }
+        let table_food= document.querySelectorAll('input[name="food_name"]:checked');
         let food_output= [];
         table_food.forEach((checkbox) => {
-            food_output.push(checkbox.value);
+        food_output.push(checkbox.value);
         });
-        // console.log("You have selected ", food_output);
+         //console.log("You have selected ", food_output);
     let table_state=document.getElementById('state')
     //console.log(table_state.value)
     let table_country=document.getElementById('country')
