@@ -1,4 +1,5 @@
 var div1 = create('div', 'container');
+div1.setAttribute('class','')
 div1.id='cal_div'
 
 let bg = document.querySelector('body');
@@ -12,15 +13,15 @@ heading_text.style.textAlign = "center";
 //Create paragraph element
 let paragraph_text=document.createElement('p')
 paragraph_text.id="description"
-paragraph_text.innerHTML="Task"
-//paragraph_text.setAttribute('class',' fw-bold')
+paragraph_text.innerHTML="Calculator Task"
+paragraph_text.setAttribute('class','text-center font-italic')
 
-let divarr = createElements('div', 'offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0', 6);
+let divarr = createElements('div', 'offset-md-2 offset-sm-1 row text-md-center text-sm-left h3 mb-0', 6);
 
-let input = create('input', 'col-8 border-3 border-light text-right mt-5 mb-1');
+let input = create('input', 'col-8 border-3 border-light text-right mt-2 mb-1');
 input.setAttribute('type', 'text');
 input.disabled = true;
-input.setAttribute('style', `line-height:60px; background-color:#505354; border-color: #343a40;color: #fff; font-family: 'Comfortaa', cursive;`);
+input.setAttribute('style', `line-height:100px; background-color:#161d1f; border-color: #343a40;color: #fff; font-family: 'Comfortaa', cursive;`);
 input.id = "result";
 
 
