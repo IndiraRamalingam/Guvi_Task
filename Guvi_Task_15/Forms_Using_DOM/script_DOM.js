@@ -4,12 +4,6 @@ container.id="form_container"
 container.classList.add('container')
 document.body.append(container)
 
-// var heading = document.createElement('div');
-// heading.setAttribute('class', 'h2');
-// heading.innerHTML = "HTML FORM"
-// heading.id="title"
-// heading.style.textAlign = "center";
-
 //Create heading element
 let heading_text=document.createElement('h1');
 heading_text.id="title"
@@ -116,29 +110,33 @@ function checkbox(food_lbl)
     label.setAttribute('class','col-3 form-label')
     label.innerHTML=food_lbl;
 
-    function food_check(food_value){
+    function food_check(food_value,food_id,name){
         let chk_div_2=document.createElement('div')
         chk_div_2.setAttribute('class', 'col-auto form-check '); 
         let food_select_2=document.createElement('input')
         food_select_2.setAttribute('type','checkbox')
         food_select_2.setAttribute('class','form-check-input')
-        food_select_2.id= food_value;
+        food_select_2.id= food_id;
+        //console.log("ID  " +food_select_2.id)
         food_select_2.value=food_value;
-        food_select_2.name=food_value;
+        food_select_2.name=name;
+        console.log(food_select_2.name)
+        //let food_val=food_select_2.name.valueOf()
+      //  console.log(food_val)
         let chk_label_2=document.createElement('label'); 
-        chk_label_2.for= food_value;
+        chk_label_2.setAttribute('for','food_id');
         chk_label_2.innerHTML=food_value
         chk_label_2.setAttribute('class','col-auto form-check-label');
         chk_div_2.append(food_select_2,chk_label_2);
         return chk_div_2
     }
 
-   let pizza=food_check("Pizza")
-   let burger=food_check("Burger")
-   let fries=food_check("Fries")
-   let cookies=food_check("Cookies")
-   let popcorn=food_check("Popcorn")
-   food_div.append(label,pizza,burger,fries,cookies,popcorn)
+   let pizza1=food_check("Pizza","pizza","food_name")
+   let burger1=food_check("Burger","burger","food_name")
+   let fries1=food_check("Fries","fries","food_name")
+   let cookies1=food_check("Cookies","cookies","food_name")
+   let popcorn1=food_check("Popcorn","popcorn","food_name")
+   food_div.append(label,pizza1,burger1,fries1,cookies1,popcorn1)
    return food_div;
 }
 
@@ -157,7 +155,7 @@ function state_dropdown(label_name)
     state_select.setAttribute('class','col-7 form-control')
     state_select.id='state';
    
-    var states = ["Select your state","TamilNadu","Kerala","Karnataka","Andhra Pradesh","Delhi"];
+    var states = ["TamilNadu","Kerala","Karnataka","Andhra Pradesh","Delhi"];
  
     for(var i=0;i<states.length;i++){     
         var opt = document.createElement("option"); 
@@ -184,7 +182,7 @@ function country_dropdown(label_name){
     country_select.setAttribute('class','col-7 form-control')
     country_select.id='country';
    
-    var countries = ["Select your country","India","United States of America","Australia","Africa","United Kingdom"];
+    var countries = ["India","United States of America","Australia","Africa","United Kingdom"];
  
     for(var i=0;i<countries.length;i++){     
         var opt = document.createElement("option"); 
@@ -257,59 +255,73 @@ th7.innerHTML = 'State';
 var th8 = document.createElement('th');
 th8.innerHTML = 'Country';
 
-
-
-function submitData() {
-    var fn = document.getElementById('first-name').value;
-    var ln = document.getElementById('last-name').value;
-    var addr = document.getElementById('address').value;
-    var pcode = document.getElementById('pincode').value;
-
-    if (!fn) {
-        alert('Please Enter First Name');
-    } else if (!ln) {
-        alert('Please Enter Last Name');
-    } else if (!addr) {
-        alert('Please Enter Address');
-    } else if (!pcode) {
-        alert('Please Enter pincode');
-    } else {
-
-        let tablebody = document.querySelector('tbody');
-        var trow2 = tablebody.insertRow(0);
-        var cell1 = trow2.insertCell(0);
-        var cell2 = trow2.insertCell(1);
-        var cell3 = trow2.insertCell(2);
-        var cell4 = trow2.insertCell(3);
-        var cell5 = trow2.insertCell(4);
-        var cell6 = trow2.insertCell(5);
-        var cell7 = trow2.insertCell(6);
-        var cell8 = trow2.insertCell(7);
-        cell1.innerHTML = fn;
-        cell2.innerHTML = ln;
-        cell3.innerHTML = addr;
-        cell4.innerHTML = pcode;
-
-        var data = document.getElementsByName('gender');
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].checked === true)
-                cell5.innerHTML = data[i].value;
+function submitData(){
+    //console.log("Thank You")
+    let table_first_name=document.getElementById('first-name')
+    //console.log(table_first_name.value)
+    let table_last_name=document.getElementById('last-name')
+   // console.log(table_last_name.value)
+    let table_address=document.getElementById('address')
+   // console.log(table_address.value)
+    let table_pincode=document.getElementById('pincode')
+   // console.log(table_pincode.value)
+    let table_gender=document.getElementsByName('gender')
+    let gen=[];
+        for (let i = 0; i < table_gender.length; i++) {
+            if (table_gender[i].checked === true)
+                //console.log(table_gender[i].value);
+                gen.push(table_gender[i].value)
         }
+        console.log(gen);
+    let table_food= document.querySelectorAll('input[name="food_name"]:checked');
+        let food_output= [];
+        table_food.forEach((checkbox) => {
+            food_output.push(checkbox.value);
+        });
+        // console.log("You have selected ", food_output);
+    let table_state=document.getElementById('state')
+    //console.log(table_state.value)
+    let table_country=document.getElementById('country')
+        //console.log(table_country.value)
+    
 
-        var foodvalues = document.getElementById('food_value');
-        cell6.innerHTML = [...foodvalues.options].filter((val) => val.selected).map((opt) => opt.value);
-       cell6.innerHTML=document.getElementById('food_value').value;
+//Create table row for tbody
+if (!table_first_name.value) {
+    console.log("please enter first")
+    alert('Please Enter First Name');
+} else if (!table_last_name.value) {
+    alert('Please Enter Last Name');
+} else if (!table_address.value) {
+    alert('Please Enter Address');
+} else if (!table_pincode.value) {
+    alert('Please Enter pincode');
+} else {
+let table_row = document.createElement('tr');
+let td1=document.createElement('td')
+td1.textContent=table_first_name.value;
+let td2=document.createElement('td')
+td2.textContent=table_last_name.value;
+let td3=document.createElement('td')
+td3.textContent=table_address.value;
+let td4=document.createElement('td')
+td4.textContent=table_pincode.value;
+let td5=document.createElement('td')
+td5.textContent=gen;
+let td6=document.createElement('td')
+td6.textContent=food_output;
+let td7=document.createElement('td')
+td7.textContent=table_state.value;
+let td8=document.createElement('td')
+td8.textContent=table_country.value;
 
-        cell7.innerHTML = document.getElementById('state').value;
-        cell8.innerHTML = document.getElementById('country').value;
-
-        alert('Thank You!!!')
-    }
-
-
+//console.log("Table   "+td.textContent)
+table_row.append(td1,td2,td3,td4,td5,td6,td7,td8)
+tbody.append(table_row)
+alert('Thank You for submitting the form!!!')
+//To reset form
+document.getElementById("form").reset();
 }
-
-
+}
 divtable.append(table);
 table.append(thead, tbody);
 thead.append(tr1);
