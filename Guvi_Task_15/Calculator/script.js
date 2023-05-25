@@ -20,11 +20,11 @@ let divarr = createElements('div', 'offset-md-2 offset-sm-1 row text-md-center t
 let input = create('input', 'col-8 border-3 border-light text-right mt-5 mb-1');
 input.setAttribute('type', 'text');
 input.disabled = true;
-input.setAttribute('class','btn btn-outline-primary col-8 text-sm-left text-xs-left');
+input.setAttribute('style', `line-height:60px; background-color:#505354; border-color: #343a40;color: #fff; font-family: 'Comfortaa', cursive;`);
 input.id = "result";
 
 
-let btnnumbers = createElements('button', ' btn btn-outline-primary text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2', 10);
+var btnnumbers = createElements('button', 'btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2', 10);
 
 btnnumbers[0].setAttribute('onclick', "appendNumber(0)");
 btnnumbers[1].setAttribute('onclick', `appendNumber(1)`);
@@ -73,7 +73,7 @@ function createElements(element, classname, num) {
     for (let i = 0; i < num; i++) {
         var b = document.createElement(element);
         b.setAttribute('class', classname);
-        //b.setAttribute('style', `font-family: 'Comfortaa', cursive;`);
+        b.setAttribute('style', `font-family: 'Comfortaa', cursive;`);
         if (element === 'button') {
             b.setAttribute('value', i);
             b.innerHTML = i;
@@ -86,7 +86,7 @@ function createElements(element, classname, num) {
 
 function createButton(txt, val, fn) {
     let a = document.createElement('button');
-    a.setAttribute('class', 'btn btn-outline-primary text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2');
+    a.setAttribute('class', 'btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2');
     a.setAttribute('value', val);
     a.innerHTML = txt;
     a.setAttribute('onclick', fn);
@@ -94,7 +94,7 @@ function createButton(txt, val, fn) {
 }
 function createButtonDouble(txt, val, fn) {
     let a = document.createElement('button');
-    a.setAttribute('class', 'btn btn-primary text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-4');
+    a.setAttribute('class', 'btn-fluid btn-dark text-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-4');
     a.setAttribute('value', val);
     a.innerHTML = txt;
     a.setAttribute('onclick', fn);
