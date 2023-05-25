@@ -94,7 +94,7 @@ function createButton(txt, val, fn) {
 }
 function createButtonDouble(txt, val, fn) {
     let a = document.createElement('button');
-    a.setAttribute('class', 'btn-fluid btn-dark text-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-4');
+    a.setAttribute('class', 'btn-fluid btn-dark text-center p-md-3 p-sm-4 p-xs-4 col-4');
     a.setAttribute('value', val);
     a.innerHTML = txt;
     a.setAttribute('onclick', fn);
