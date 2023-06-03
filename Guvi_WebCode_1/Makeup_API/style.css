@@ -1,0 +1,69 @@
+
+
+.header-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+    .heading {
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    }
+
+    .heading-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    }
+
+    .heading-main {
+    display: block;
+    font-weight: 800;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    }
+    header {
+        position: relative;
+        border-bottom: 3px solid #f15292;
+        background-image: url(https://img.freepik.com/premium-photo/different-luxury-makeup-products-pink-background-flat-lay-top-view_106006-6326.jpg);
+        background-position: center;
+        height: 60vh;
+        }
+        section{
+            height:50vh;
+        }
+        footer {
+        background: rgb(254, 178, 191);
+        height: 8rem;
+        vertical-align: center;
+        }
+        .link:hover {
+        color: rgb(223, 86, 185);
+        }
+        .footer_color {
+        color:#df56b9;
+        font-size: 2.0rem;
+        margin-top: auto; 
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 0.5rem;
+        }
+        #div_card
+        {
+            background:linear-gradient(to right, rgb(254 185 197),rgb(230 193 220))
+        }
+        .color-box {   
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display:inline-block;
+            vertical-align: middle;
+         }
+         
+         .color-title {
+           display: inline-block;
+           vertical-align: baseline;
+         }
