@@ -63,7 +63,7 @@ function getData1(data)
         function createDropdownProduct(new_Product)
         {
         let div_col1=document.createElement('div')
-        div_col1.setAttribute('class','col-6')
+        div_col1.setAttribute('class','col-sm-6')
         let btn_product_div=document.createElement('div')
         btn_product_div.setAttribute('class','btn-group ')
 
@@ -98,7 +98,7 @@ function getData1(data)
         {
     
         let div_col2=document.createElement('div')
-        div_col2.setAttribute('class','col-6')
+        div_col2.setAttribute('class','col-sm-6')
         let btn_brand_div=document.createElement('div')
         btn_brand_div.setAttribute('class','btn-group')
 
@@ -268,7 +268,7 @@ async function getProducts(product_value,brand_value)
         let error_div=document.createElement('row')
         error_div.setAttribute('class','row')
         let error_col=document.createElement('col')
-        error_col.setAttribute('class','col-12')
+        error_col.setAttribute('class','col-sm-12')
         error_col.innerHTML=`<p><span style="color:red">Sorry, No results found:( </span></p>`
         error_div.append(error_col)
         div_row_error.append(error_div)
@@ -296,7 +296,7 @@ function getData(event)
 function createSubmit()
 { 
 let div_col2=document.createElement('div')
-div_col2.setAttribute('class','col-12 ')
+div_col2.setAttribute('class','col-sm-12 ')
 div_col2.setAttribute('style','margin-top:35px')
 let submit=document.createElement('button')
 submit.setAttribute('type','submit')
@@ -312,10 +312,10 @@ return div_col2;
 let submit=createSubmit()
 
 let label_1=document.createElement('label')
-label_1.setAttribute('class','col-6')
+label_1.setAttribute('class','col-sm-6')
 label_1.innerHTML=`<h4><span style="color:#c33199"><em>Choose a product</em></span><h4>`
 let label_2=document.createElement('label')
-label_2.setAttribute('class','col-6  ')
+label_2.setAttribute('class','col-sm-6  ')
 label_2.innerHTML=`<h4><span style="color:#c33199"><em>Choose a brand</em></span><h4>`
 div_3.append(label_1,label_2)
 form_div.append(div_3,div_1,div_2)
