@@ -250,7 +250,7 @@ async function getProducts(product_value,brand_value)
                     console.log("CCC  "+i)
                     color_div.innerHTML=`<span class="card-text color-box" style="background: ${i};"></span>`
                 })
-                color_div.append(clr,title)
+                color_div.append(clr)
                 
             
             //Append to card_div
