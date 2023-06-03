@@ -160,8 +160,8 @@ async function getProducts(product_value,brand_value)
             let price_display=e.price;
             let description_display=e.description;
             let link_display=e.product_link;
-            let color_display=e.product_colors[0].hex_value;
-            console.log("Value  "+color_display)
+            //let color_display=e.product_colors[0].hex_value;
+            //console.log("Value  "+color_display)
 
             //create cards and append it to column        
             let div_col_card=document.createElement('div')
@@ -169,7 +169,7 @@ async function getProducts(product_value,brand_value)
             let card_group=document.createElement('div')
             card_group.setAttribute('class','card-group')
         // if(image_display!=""||name_display!="")
-            function create_cards(image_display,name_display,product_display,brand_display,price_display,description_display,link_display,color_display)
+            function create_cards(image_display,name_display,product_display,brand_display,price_display,description_display,link_display)
             {
                 console.log("Create card")
                 console.log("Check   "+image_display+"   "+name_display+"  "+product_display+"  "+brand_display+"  "+price_display+" "+link_display)
@@ -236,28 +236,28 @@ async function getProducts(product_value,brand_value)
                     trigger: 'focus'
                 })
                 }
-                //Colors to show
-                let color_div=document.createElement('div')
-                color_div.setAttribute('class','colors-info mb-2')
-                let title=document.createElement('p')
-                title.setAttribute('class','color-title')
-                title.innerHTML=`Color's: `
-                let colors=[];
-                colors.push(color_display);
-                console.log("fdsfsdfsdfs   "+colors)
-                let clr=colors.map(function(i)
-                {
-                    console.log("CCC  "+i)
-                    color_div.innerHTML=`<span class="card-text color-box" style="background: ${i};"></span>`
-                })
-                color_div.append(clr)
+//                 //Colors to show
+//                 let color_div=document.createElement('div')
+//                 color_div.setAttribute('class','colors-info mb-2')
+//                 let title=document.createElement('p')
+//                 title.setAttribute('class','color-title')
+//                 title.innerHTML=`Color's: `
+//                 let colors=[];
+//                 colors.push(color_display);
+//                 console.log("fdsfsdfsdfs   "+colors)
+//                 let clr=colors.map(function(i)
+//                 {
+//                     console.log("CCC  "+i)
+//                     color_div.innerHTML=`<span class="card-text color-box" style="background: ${i};"></span>`
+//                 })
+//                 color_div.append(clr)
                 
             
             //Append to card_div
-            card_div.append(card_img,card_header,card_body,color_div,card_link,card_btn)
+            card_div.append(card_img,card_header,card_body,card_link,card_btn)
             return card_div;
             }
-            let card=create_cards(image_display,name_display,product_display,brand_display,price_display,description_display,link_display,color_display)
+            let card=create_cards(image_display,name_display,product_display,brand_display,price_display,description_display,link_display)
             card_group.append(card)
             div_col_card.append(card_group)
             div_row_card.append(div_col_card)
