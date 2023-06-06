@@ -1,0 +1,32 @@
+.container{
+    border:1px solid black;
+}
+.header{
+    text-align: center;
+    font-size: xxx-large;
+    background-image: url(https://www.shutterstock.com/image-photo/weather-forecast-concept-climate-change-260nw-1416259745.jpg);
+    background-position: center;
+    height: 30vh;
+    position: relative;
+    border-bottom: 10px solid #3d7d97;
+    color:white;
+
+}
+.name{
+    font-size:x-large;
+}
+.font{
+    font-size:larger;
+}
+.font1{
+    font-size:large;
+}
+.back_color{
+    background:linear-gradient(to right,#3d7d97,white 50%,#3d7d97)
+}
+.b_image{
+    background-image: url("https://cdn3.f-cdn.com/contestentries/329593/16030908/569a8dbb02b52_thumb900.jpg");
+}
+.b_ul{
+    background:linear-gradient(to right,white,#3d7d97 50%,white)
+}

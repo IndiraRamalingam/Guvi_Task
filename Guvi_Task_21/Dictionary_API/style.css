@@ -1,0 +1,12 @@
+.container{
+    border:1px solid black;
+}
+.header{
+    text-align: center;
+    font-size: xxx-large;
+    background-image: url(https://www.shutterstock.com/image-photo/dictionary-showing-word-260nw-392723320.jpg);
+    background-position: center;
+    height: 30vh;
+    position: relative;
+    border-bottom: 10px solid #645b5e;
+}

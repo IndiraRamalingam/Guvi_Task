@@ -1,0 +1,70 @@
+
+body{
+    margin-top: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(to left bottom, rgb(235 37 37), rgb(158 103 103), #7474a9);
+}
+p{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    color: blue!important;
+    
+
+} 
+h4{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    color: lightblue !important;
+    margin-bottom: 1em;
+
+}
+h1{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 5em;
+    color: royalblue !important;
+    margin-bottom: 1em;
+}
+.results{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid lightblue;
+    border-radius: 100px;
+}
+.result{
+    background-color: rgb(177, 177, 177);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 300px;
+}
+.img1{
+    object-fit: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+    
+}
+button{
+    
+    border: 5px solid rgb(108, 111, 120);
+    color:rgb(217, 236, 217);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    border-radius: 50px;
+    margin: 20px;
+    background-color: rgb(113, 7, 7);
+
+}
+button:active{
+    transform: scale(0.98);
+}
+button:focus{
+    outline: none;
+}
+button:hover{
+    color:rgb(51, 65, 70);
+}
