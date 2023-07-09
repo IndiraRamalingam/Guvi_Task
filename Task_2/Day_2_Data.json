@@ -1,0 +1,242 @@
+
+//Documents for users collection
+
+
+db.users.insertMany([
+{
+  userId: 1,
+  mentor_id: 1,
+  name: "Indira",
+  email: "indira@gmail.com"
+},
+{
+  userId: 2,
+  mentor_id: 2,
+  name: "Deepa",
+  email: "deepa@gmail.com"
+},
+{
+  userId: 3,
+  mentor_id: 3,
+  name: "Arul",
+  email: "arul@gmail.com"
+},
+{
+  userId: 4,
+  mentor_id: 4,
+  name: "Dhakshith",
+  email: "dhakshith@gmail.com"
+},
+{
+  userId: 5,
+  mentor_id: 5,
+  name: "Nandu",
+  email: "nandu@gmail.com"
+}
+]);
+
+
+//Documents for codekata collection
+
+
+db.codekata.insertMany([
+{
+	no_of_problems_solved:130,
+	userId:1
+},
+{
+	no_of_problems_solved:220,
+	userId:2
+},
+{
+	no_of_problems_solved:140,
+	userId:3
+},
+{
+	no_of_problems_solved:300,
+	userId:4
+},
+{
+	no_of_problems_solved:280,
+	userId:5
+}
+]);
+
+
+//Documents for attendance collection
+
+db.attendance.insertMany([
+{
+	userId:1,
+	topic_id:1,
+	attendance:true
+},
+{
+	userId:2,
+	topic_id:2,
+	attendance:true
+},
+{
+	userId:3,
+	topic_id:3,
+	attendance:false
+},
+{
+	userId:4,
+	topic_id:4,
+	attendance:false
+},
+{
+	userId:5,
+	topic_id:5,
+	attendance:true
+}
+]);
+
+//Documents for tasks collection
+
+db.tasks.insertMany([
+{
+	task_id:1,
+	topic_id:1,
+	userId:1,
+	task:"HTML Task",
+	due_date:new Date("2023-11-02"),
+	submitted:true
+},
+{
+	task_id:2,
+	topic_id:2,
+	userId:2,
+	task:"CSS Task",
+	due_date:new Date("2023-11-02"),
+	submitted:true
+},
+{
+	task_id:3,
+	topic_id:3,
+	userId:3,
+	task:"JS Task",
+	due_date:new Date("2023-10-25"),
+	submitted:true
+},
+{
+	task_id:4,
+	topic_id:4,
+	userId:4,
+	task:"DOM Task",
+	due_date:new Date("2023-10-14"),
+	submitted:false
+},
+{
+	task_id:5,
+	topic_id:5,
+	userId:5,
+	task:"React Task",
+	due_date:new Date("2023-10-26"),
+	submitted:false
+}
+]);
+
+//Documents for topics collection
+
+db.topics.insertMany([
+{
+	topic_id:1,
+	topic_name:"HTML",
+	userId:1,
+	topic_date:new Date("2023-10-25")
+},
+{
+	topic_id:2,
+	topic_name:"CSS",
+	userId:2,
+	topic_date:new Date("2023-11-03")
+},
+{
+	topic_id:3,
+	topic_name:"JS",
+	userId:3,
+	topic_date:new Date("2023-10-17")
+},
+{
+	topic_id:4,
+	topic_name:"DOM",
+	userId:4,
+	topic_date:new Date("2023-10-30")
+},
+{
+	topic_id:5,
+	topic_name:"React",
+	userId:5,
+	topic_date:new Date("2023-10-19")
+},
+]);
+
+
+//Documents for company_drives collection
+
+db.company_drives.insertMany([
+{
+	userId:1,
+	company:"Zoho",
+	drive_date:new Date("2023-10-16")
+},
+{
+	userId:2,
+	company:"TCS",
+	drive_date:new Date("2023-10-22")
+},
+{
+	userId:2,
+	company:"CTS",
+	drive_date:new Date("2023-10-29")
+},
+{
+	userId:4,
+	company:"Infosys",
+	drive_date:new Date("2023-10-10")
+},
+{
+	userId:5,
+	company:"Paypal",
+	drive_date:new Date("2023-10-28")
+},
+]);
+
+
+//Documents for mentors collection
+
+
+db.mentors.insertMany([
+{
+	mentor_id:1,
+	mentor_name:"Sathish",
+	mentor_email:"sathish@gmail.com",
+	mentee_count:15
+},
+{
+	mentor_id:2,
+	mentor_name:"Vishnu",
+	mentor_email:"vishnu@gmail.com",
+	mentee_count:12
+},
+{
+	mentor_id:3,
+	mentor_name:"Harish",
+	mentor_email:"harish@gmail.com",
+	mentee_count:18
+},
+{
+	mentor_id:4,
+	mentor_name:"Gugan",
+	mentor_email:"gugan@gmail.com",
+	mentee_count:22
+},
+{
+	mentor_id:5,
+	mentor_name:"Hadwik",
+	mentor_email:"hadwik@gmail.com",
+	mentee_count:20
+}
+]);
