@@ -16,7 +16,7 @@ footer.setAttribute('class','')
 footer.innerHTML=`<div class="container footer_color">
 <a href="https://makeup-api.herokuapp.com/" target="_blank" class="link"><span style="color:#c33199"><em>www.makeup-api.herokuapp.com</em></a>.</span>
 </div>`
-header.innerHTML=`<div class="header-text-box">
+header.innerHTML=`<div class="header-text-box" style='height:50vh'>
             <h1 class="display-4 heading">
               <span class="heading-sub"></span><span class="heading-main">Makeup Products API</span>  
             </h1>
